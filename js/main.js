@@ -1,7 +1,10 @@
 var canvas = document.createElement("canvas");
 var context = canvas.getContext("2d");
 var screenWidth = 500;
-var screenHeight = 900;
+if (document.documentElement.scrollWidth < 500)
+  screenWidth = document.documentElement.scrollWidth - 30;
+var screenHeight = document.documentElement.scrollHeight - 30;
+if (document.documentElement.scrollHeight > 1230) screenHeight = 1200;
 canvas.width = screenWidth;
 canvas.height = screenHeight;
 canvas.style =
